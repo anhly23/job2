@@ -8,9 +8,7 @@ pipeline {
         }
         stage('Build and Push Docker Image') {
             steps {
-                // This step should not normally be used in your script. Consult the inline help for details.
-                withDockerRegistry(credentialsId: 'crdes-dockerhub', url: '') {
-                // some block
+                withDockerRegistry(credentialsId: 'crdes-dockerhub', url: 'https://index.docker.io/v1/') {
                     sh 'docker build -t anhly230722/web:latest .'
                     sh 'docker push anhly230722/web:latest'
                 }
