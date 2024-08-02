@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git credentialsId: 'github', url: 'https://github.com/anhly23/job2.git'
+                git credentialsId: 'job1', url: 'https://github.com/anhly23/job2.git'
             }
         }
         stage('Build and Push Docker Image') {
